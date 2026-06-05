@@ -1,0 +1,53 @@
+{% capture page_content_formatted %}{{ page_section_object.content | replace_global_regex: '\r\n','' | replace: '<pre>ITEM ENDITEM START</pre>','</div>------<div class="item">' | replace: '<pre>ITEM START</pre>','---<div class="item">' | replace: '<pre>ITEM END</pre>','</div>---' }}{% endcapture %}
+{% assign page_content_array = page_content_formatted | split: '---' | assign_to: 'page_elements' %}
+
+{% capture column_contents %}{% endcapture %}
+
+{{ 0 | assign_to: 'item_index' }}
+{{ 0 | assign_to: 'row_index' }}
+{% for page_element in page_elements %}
+	{% if page_element contains '<div class="item">' %}
+		{% capture column_contents %}
+		{{ column_contents }}
+
+		{% if row_index == 0 %}
+			{{ row_index | plus: 1 | assign_to: 'row_index' }}
+			<div class="row space-large same-height-parent-js">
+		{% endif %}
+
+		<div class="columns large-6 end space-large same-height-item-js">
+			<div class="row">
+				{% if page_section_object.images.size > 0 %}
+				<div class="columns small-4 medium-3 large-2">
+					<img src="{{ page_section_object.images[item_index].url }}" alt="{% if page_section_object.images[item_index].title != page_section_object.images[item_index].file_name %}{{ page_section_object.images[item_index].title | html_safe }}{% endif %}" />
+				</div>
+				{% endif %}
+				<div class="columns{% if page_section_object.images.size > 0 %} small-8 medium-9 large-10{% endif %}">
+					<div class="column-tiles-item">
+						{{ page_element }}
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endcapture %}
+		{{ item_index | plus: 1 | assign_to: 'item_index' }}
+
+	{% elsif page_element != '' %}
+		{% capture column_contents %}
+		{{ column_contents }}
+
+		{% if row_index == 1 %}
+			{{ row_index | minus: 1 | assign_to: 'row_index' }}
+			</div><!--close .row-->
+		{% endif %}
+
+		<div class="row space-medium">
+			<div class="column">
+				{{ page_element }}
+			</div>
+		</div>
+		{% endcapture %}
+	{% endif %}
+{% endfor %}
+
+{{ column_contents }}

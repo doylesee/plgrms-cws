@@ -1,0 +1,11 @@
+{% if root_url contains 'preview' or root_url contains '-dev' %}
+    {% capture cb_is_dev %}true{% endcapture %}
+{% endif %}
+
+{% if cb_is_dev == 'true' %}
+	{% capture jbs_careers_url %}https://jbscareers-dev.ttcportals.com{% endcapture %}
+	{% capture pilgrims_careers_url %}https://pilgrimscareers-dev.ttcportals.com{% endcapture %}
+{% else %}
+	{% capture jbs_careers_url %}https://careers.jbs.com{% endcapture %}
+	{% capture pilgrims_careers_url %}https://jobs.pilgrims.com{% endcapture %}
+{% endif %}

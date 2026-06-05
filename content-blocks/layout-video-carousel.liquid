@@ -1,0 +1,28 @@
+<div class="video-carousel">
+	{% if page_section_object.content != blank %}
+	<div class="video-carousel__copy-outer">
+		<div class="row">
+		    <div class="column large-4 xlarge-5 end">
+		    	<div class="video-carousel__copy">
+		        	{{ page_section_object.content }}
+		        </div>
+		    </div>
+		</div>
+	</div>
+	{% endif %}
+
+	<div class="video-carousel__items">
+		<div class="row row--full-width">
+			<div class="column large-9 large-offset-5 xlarge-8 xlarge-offset-4">
+				<div class="video-carousel-inner">
+					{% for video in page_section_object.videos %}
+						<div class="video-carousel__item embed-container">
+							{% comment %}{{ video.code | replace: 'http://','https://' | replace: '"></iframe>','?rel=0&modestbranding=1"></iframe>' }}{% endcomment %}
+							{{ video.code | replace: 'http://','https://' | replace: '"></iframe>','?enablejsapi=1"></iframe>'  }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--close .video-carousel-->

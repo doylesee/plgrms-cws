@@ -1,0 +1,44 @@
+<!--Display page sections-->
+{% for i in (1..employer.pages.size) %}
+    {% capture page_layout %}{% endcapture %}
+
+    {% capture page_section_order_tag %}{{ page_permalink }}-section-{{ forloop.index }}{% endcapture %}
+    {{ page_section_order_tag | pages_with_tag | assign_to: 'page_sections' }}
+
+    <!--check if page section/s exist-->
+    {% if page_sections.size > 0 %}
+        <!--check if page section has layout, then capture layout name-->
+        {% if page_sections[0].tag_list contains 'layout-' %}
+            {% for page_tag in page_sections[0].tags %}
+                {% if page_tag contains 'layout-' %}
+                    {% capture page_layout %}/pilgrims__{{ page_tag }}{% endcapture %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <section class="space-xlarge{% if page_sections[0].tag_list contains 'background-' %} padded-v-xlarge section-with-background{% endif %}{% if page_sections[0].tag_list != blank %} {{ page_sections[0].tag_list | remove: ',' }}{% endif %}{% if page_sections[0].tag_list contains 'background-1' or page_sections[0].tag_list contains 'background-3' %} background-dark{% endif %}">
+            <!--output page section/s-->
+            {% if page_layout != blank %}
+                <!--if page section has layout-->
+                {{ page_sections[0] | assign_to: 'page_section_object' }}
+                {% include page_layout %}
+
+            {% else %}
+                <!--if page section has no layout-->
+                <div class="row">
+                    <div class="columns">
+                        {{ page_sections[0].content }}
+                    </div>
+                </div>
+                
+
+            {% endif %}
+        </section>
+
+    {% else %}
+        {% break %}
+
+    {% endif %}
+
+{% endfor %}

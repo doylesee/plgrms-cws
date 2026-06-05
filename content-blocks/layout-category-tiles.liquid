@@ -1,0 +1,69 @@
+{% if page_section_object.content != blank %}
+<div class="row">
+    <div class="column space-medium">
+        {{ page_section_object.content }}
+    </div>
+</div>
+{% endif %}
+
+<div class="job-category">
+    <div class="row">
+        <div class="column">
+            <div class="job-category-inner row same-height-parent-js">
+                {% for i in (1..employer.pages.size) %}
+                    {% capture category_order_tag %}job-category-{{ forloop.index }}{% endcapture %}
+                    {{ category_order_tag | pages_with_tag | assign_to: 'category_order' }}
+
+                    {% if category_order.size > 0 %}
+                        <!--capture job category page content and break them apart and group them into an array-->
+                        {% capture category_content_formatted %}{{ category_order[0].content | replace: '<p>','---' | replace: '</p>','---' }}{% endcapture %}
+                        {% assign category_content_array = category_content_formatted | split: '---' | assign_to: 'category_attr' %}
+                        {% assign category_permalink = category_attr[1] | strip %}<!--THE SEARCH QUERY URL SHOULD ALWAYS BE THE FIRST PARAGRAPH-->
+
+                        {% for tag in category_order[0].tags %}
+                            {% if tag contains '-jobs-content' %}
+                                {% capture category_permalink_w_content_tag %}{{ category_permalink }}{% if category_permalink contains '?' %}&{% else %}?{% endif %}ns_category={{ tag | remove: '-jobs-content' }}{% endcapture %}
+                                {% break %}
+                            {% endif %}
+                        {% endfor %}
+
+                        <div class="columns medium-6 large-4 end job-category__item-outer space-foundation">
+                            <a class="job-category__item" href="{{ category_permalink_w_content_tag }}">
+                                <div class="job-category__item-copy padded-medium same-height-item-js">
+                                    <h2 class="space-none">{{ category_order[0].title | html_safe }}</h2>
+                                    <p class="space-none"><span class="job-category__item-total--{{ forloop.index }}"></span> available jobs</p>
+                                </div>
+                                <img src="{{ category_order[0].images[0].url }}" alt="{% if category_order[0].images[0].title != category_order[0].images[0].file_name %}{{ category_order[0].images[0].title | html_safe }}{% endif %}" loading="lazy" />
+                            </a>
+                        </div><!--close.job-category__item-outer-->
+
+                        {% capture job_search_url_json %}{{ category_permalink | replace: '/jobs','/jobs.json' | replace: '&amp;','&' }}{% if category_permalink contains '?' %}&{% else %}?{% endif %}callback=?{% endcapture %}
+                        <script>
+                            $.getJSON('{{ job_search_url_json }}', function(data) {
+                                var job_obj = data;
+                                if (job_obj.total_entries > 0) {
+                                    $('.job-category__item-total--{{ forloop.index }}').text(job_obj.total_entries);
+                                }
+                                else {
+                                    $('.job-category__item-total--{{ forloop.index }}').text('0');
+                                }
+                            });
+                        </script>
+
+                    {% else %}
+                        {% break %}
+
+                    {% endif %}
+                {% endfor %}
+                <div class="columns medium-6 large-4 end job-category__item-outer space-foundation">
+                    <a class="job-category__item" href="/search/jobs">
+                        <div class="job-category__item-copy padded-medium same-height-item-js">
+                            <h2 class="heading-4 space-none">Browse Other Opportunities</h2>
+                        </div>
+                        <img src="/system/production/assets/450104/original/careers-home__browse-other-opportunities--v2.jpg" alt="" />
+                    </a>
+                </div><!--close.job-category__item-outer-->
+            </div>
+        </div>
+    </div>
+</div><!--close .job-category-->

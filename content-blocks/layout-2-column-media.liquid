@@ -1,0 +1,50 @@
+{% capture page_content_formatted %}{{ page_section_object.content | replace_global_regex: '\r\n','' | replace: '<pre>ITEM ENDITEM START</pre>','</div>------<div class="item">' | replace: '<pre>ITEM START</pre>','---<div class="item">' | replace: '<pre>ITEM END</pre>','</div>---' }}{% endcapture %}
+{% assign page_content_array = page_content_formatted | split: '---' | assign_to: 'page_elements' %}
+
+{% capture column_contents %}{% endcapture %}
+
+{{ 0 | assign_to: 'item_index' }}
+{{ 0 | assign_to: 'row_index' }}
+{% for page_element in page_elements %}
+	{% if page_element contains '<div class="item">' %}
+		{% capture column_contents %}
+		{{ column_contents }}
+
+		<div class="two-column-media space-xlarge">
+			<div class="two-column-media__image-outer">
+				<div class="row row--full-width full-height">
+					<div class="column large-9 large-offset-5 xlarge-8 xlarge-offset-4 full-height">
+						<div class="two-column-media__image" style="background-image: url('{{ page_section_object.images[item_index].url }}');">
+							<img src="{{ page_section_object.images[item_index].url }}" alt="{% if page_section_object.images[item_index].title != page_section_object.images[item_index].file_name %}{{ page_section_object.images[item_index].title | html_safe }}{% endif %}" loading="lazy" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="two-column-media__copy-outer padded-v-large">
+				<div class="row">
+				    <div class="column medium-10 medium-offset-1 end large-4 large-offset-0 xlarge-5 xlarge-offset-0 end">
+				    	<div class="padded-v-xlarge show-for-medium hide-for-large"></div>
+				    	<div class="two-column-media__copy">
+				        	{{ page_element }}
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div><!--close .two-column-media-->
+		{% endcapture %}
+		{{ item_index | plus: 1 | assign_to: 'item_index' }}
+
+	{% elsif page_element != '' %}
+		{% capture column_contents %}
+		{{ column_contents }}
+
+		<div class="row space-medium">
+			<div class="column">
+				{{ page_element }}
+			</div>
+		</div>
+		{% endcapture %}
+	{% endif %}
+{% endfor %}
+
+{{ column_contents }}

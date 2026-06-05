@@ -1,0 +1,18 @@
+{% comment %}Redirect page sections to Careers Home page{% endcomment %}
+{% if page.tag_list contains '-section-' %}{% redirect_permanent root_url %}{% endif %}
+
+{% comment %}Redirect for Category - Content Pages{% endcomment %}
+{% if page.tag_list contains '-jobs-content' %}
+	{% capture category_content_formatted %}{{ page.content | replace: '<p>','---' | replace: '</p>','---' }}{% endcapture %}
+	{% assign category_content_array = category_content_formatted | split: '---' | assign_to: 'category_attr' %}
+	{% assign category_permalink = category_attr[1] | strip %}<!--THE SEARCH QUERY URL SHOULD ALWAYS BE THE FIRST PARAGRAPH-->
+
+	{% for tag in page.tags %}
+        {% if tag contains '-jobs-content' %}
+            {% capture category_permalink_w_content_tag %}{{ category_permalink }}{% if category_permalink contains '?' %}&{% else %}?{% endif %}ns_category={{ tag | remove: '-jobs-content' }}{% endcapture %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+
+    {% redirect_permanent category_permalink_w_content_tag %}
+{% endif %}
