@@ -18,19 +18,19 @@ To execute this project, I had to operate as a solo powerhouse, stepping in to o
 <br />
 
 ## Core Objectives
-**End-to-End Product Delivery**<br />
+🟠 **End-to-End Product Delivery**<br />
 Serve as both the sole designer and core developer to translate their brand vision into a live digital platform.
 
-**Cohesive Brand Synthesis**<br />
+🟠 **Cohesive Brand Synthesis**<br />
 Reverse-engineer the company's existing corporate footprint to establish an identical, frictionless candidate user experience.
 
-**Tag-Based Content Management System**<br />
+🟠 **Tag-Based Content Management System**<br />
 Architect a synamic, tag-driven template compiler to turn a rigid backend text database into a modular page builder.
 
-**Comprehensive Client Enablement**<br />
+🟠 **Comprehensive Client Enablement**<br />
 Deliver production-ready user documentation ensuring long-term project viability and handoff success.
 
-**Flawless Front-End Execution**<br />
+🟠 **Flawless Front-End Execution**<br />
 Ensure mobile-first responsiveness, cross-browser compatibility, and strict adherence to web accessibility standards.
 
 <br />
@@ -51,16 +51,16 @@ To conclude the product handoff, I wrote a comprehensive, step-by-step Content M
 <br />
 
 ## Results & Impact
-**Frictionless UX**<br />
+✅ **Frictionless UX**<br />
 Successfully designed and delivered a beautiful, brand-accurate career site that maintained structural design compatibility with Pilgrim's core corporate presence.
 
-**Zero-Code Structural Content Management**<br />
+✅ **Zero-Code Structural Content Management**<br />
 Empowered a completely non-technical team to rapidly add, reorganize, and manage custom layout pages simply by modifying basic tags inside their dashboard.
 
-**Fullproof Production Quality**<br />
+✅ **Fullproof Production Quality**<br />
 Shipped a production-grade codebase achieving absolute device optimization, cross-browser compatibility, and seamless compliance with global web accessibility standards.
 
-**Flawless Operational Handoff**<br />
+✅ **Flawless Operational Handoff**<br />
 Provided a solid user documentation that entirely eliminated post-launch support overhead, making the client transition independent and highly successful.
 
 <br /><strong><a href="https://jobs.pilgrims.com/">View project</a></strong>
