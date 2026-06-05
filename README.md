@@ -1,4 +1,4 @@
-<p><a href="https://jobs.pilgrims.com/"><img src="https://doylesee.github.io/plgrms-cws/thumbnail.jpeg" /></a></p>
+<p><a href="https://jobs.pilgrims.com/"><img src="https://doylesee.github.io/plgrms-cws/thumbnail.jpg" /></a></p>
 
 ## Project Overview
 <pre>
