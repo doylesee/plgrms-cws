@@ -1,0 +1,17 @@
+{% page_required_header %}
+
+<section class="space-large">
+    <div class="row">
+        <div class="column{% if page.tag_list contains 'no-index' %} no-index-page{% endif %}">
+            {% unless page.tag_list contains 'no-index' %}
+            <h1>{{ page.title | html_safe }}</h1>
+            {% endunless %}
+            {{ page.content }}
+        </div>
+    </div>
+</section>
+
+{% capture page_permalink %}{{ page.permalink }}{% endcapture %}
+{% include '/pilgrims__config__page-section-logic' %}
+
+{% page_required_footer %}
