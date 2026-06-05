@@ -4,7 +4,7 @@
 <pre>
 <b>Project:</b>   Pilgrim's Career Site
 <b>Role:</b>      UI/UX Designer & Lead UI Developer
-<b>Tools:</b>     Liquid, HTML5, CSS3, JS/jQuery, Foundation, Figma
+<b>Tools:</b>     Figma, Liquid, HTML5, CSS3, JS/jQuery, Foundation
 </pre>
 &nbsp;<strong><a href="https://jobs.pilgrims.com/">View project</a></strong>
 
