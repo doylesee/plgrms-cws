@@ -11,7 +11,7 @@
 <br />
 
 ## The Challenge
-Pilgrim's required a modern, high-performance career site to drive talent acquisition, but faced a major barrier: they lacked an internal design team, marketing agency assets, or pre-made web designs.
+Pilgrim's required a modern, high-performance career site to drive talent acquisition, but faced a major barrier: they didn't have any designs ready for the build.
 
 To execute this project, I had to operate as a solo powerhouse, stepping in to own the entire product lifecycle from initial layout concepts to deployment. The core challenge was twofold: creating a beautiful digital experience under limited structural resources that seamlessly matched their existing corporate aesthetic, and build a flexible architecture that allowed completely non-technical recruitment personnel to add, update, and reorder full-page sections dynamically.
 
