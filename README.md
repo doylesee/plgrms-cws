@@ -1,5 +1,3 @@
-<p><a href="https://jobs.pilgrims.com/"><img src="https://doylesee.github.io/plgrms-cws/thumbnail.jpg" /></a></p>
-
 ## Project Overview
 <pre>
 <b>Project:</b>   Pilgrim's Career Site
@@ -8,6 +6,7 @@
 </pre>
 &nbsp;<strong><a href="https://jobs.pilgrims.com/">View project</a></strong>
 
+<p><a href="https://jobs.pilgrims.com/"><img src="https://doylesee.github.io/plgrms-cws/thumbnail.jpg" /></a></p>
 <br />
 
 ## The Challenge
