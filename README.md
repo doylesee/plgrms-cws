@@ -4,9 +4,9 @@
 <b>Role:</b>      UI/UX Designer & Lead UI Developer
 <b>Tools:</b>     Figma, Liquid, HTML5, CSS3, JS/jQuery, Foundation
 </pre>
-&nbsp;<strong><a href="https://jobs.pilgrims.com/">View project</a></strong>
+&nbsp;<strong><a href="https://jobs.pilgrims.com/" rel="noopener noreferrer">View project</a></strong>
 
-<p><a href="https://jobs.pilgrims.com/"><img src="https://doylesee.github.io/plgrms-cws/thumbnail.jpg" /></a></p>
+<p><a href="https://jobs.pilgrims.com/" rel="noopener noreferrer"><img src="https://doylesee.github.io/plgrms-cws/thumbnail.jpg" /></a></p>
 <br />
 
 ## The Challenge
@@ -62,4 +62,4 @@ Shipped a production-grade codebase achieving absolute device optimization, cros
 ✅ **Flawless Operational Handoff**<br />
 Provided a solid user documentation that entirely eliminated post-launch support overhead, making the client transition independent and highly successful, and lowering future costs.
 
-<br /><strong><a href="https://jobs.pilgrims.com/">View project</a></strong>
+<br /><strong><a href="https://jobs.pilgrims.com/" rel="noopener noreferrer">View project</a></strong>
