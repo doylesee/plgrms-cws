@@ -5,8 +5,13 @@
 <b>Tools:</b>     Figma, Liquid, HTML5, CSS3, JS/jQuery, Foundation
 </pre>
 &nbsp;<strong><a href="https://jobs.pilgrims.com/" rel="noopener noreferrer">View project</a></strong>
+<br /><br />
 
-<p><a href="https://jobs.pilgrims.com/" rel="noopener noreferrer"><img src="https://doylesee.github.io/plgrms-cws/thumbnail.jpg" /></a></p>
+### Table of Contents
+* [The Challenge](#the-challenge)
+* [Core Objectives](#core-objectives)
+* [My Approach & Implementation](#my-approach--implementation)
+* [Results & Impact](#results--impact)
 <br />
 
 ## The Challenge
