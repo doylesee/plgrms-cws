@@ -4,14 +4,13 @@
 <b>Role:</b>      UI/UX Designer & Lead UI Developer
 <b>Tools:</b>     Figma, Liquid, HTML5, CSS3, JS/jQuery, Foundation
 </pre>
-&nbsp;<strong><a href="https://jobs.pilgrims.com/" rel="noopener noreferrer">View project</a></strong>
-<br /><br />
 
 ### Table of Contents
 * [The Challenge](#the-challenge)
 * [Core Objectives](#core-objectives)
 * [My Approach & Implementation](#my-approach--implementation)
 * [Results & Impact](#results--impact)
+* [View Project](https://jobs.pilgrims.com/)
 <br />
 
 ## The Challenge
