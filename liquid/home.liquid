@@ -1,0 +1,18 @@
+{% page_required_header %}
+
+{{ 'careers-home' | pages_with_tag | assign_to: 'careers_home' }}
+{% if careers_home.size > 0 %}
+    <section class="space-large">
+        <div class="row">
+            <div class="column">
+                <h1>{{ careers_home[0].title | html_safe }}</h1>
+                {{ careers_home[0].content }}
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% capture page_permalink %}careers-home{% endcapture %}
+{% include '/pilgrims__config__page-section-logic' %}
+
+{% page_required_footer %}
