@@ -13,6 +13,10 @@
 * [View Project](https://jobs.pilgrims.com/)
 <br />
 
+<a href="https://jobs.pilgrims.com">
+  <img src="screenshot.jpg" alt="" width="100%">
+</a>
+
 ## The Challenge
 Pilgrim's required a modern, high-performance career site to drive talent acquisition, but faced a major barrier: they didn't have any designs ready for the build.
 
